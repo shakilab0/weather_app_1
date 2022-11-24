@@ -171,29 +171,23 @@ Clouds copyWith({  num? all,
 class Wind {
   Wind({
       this.speed, 
-      this.deg, 
-      this.gust,});
+      this.deg,});
 
   Wind.fromJson(dynamic json) {
     speed = json['speed'];
     deg = json['deg'];
-    gust = json['gust'];
   }
   num? speed;
   num? deg;
-  num? gust;
 Wind copyWith({  num? speed,
   num? deg,
-  num? gust,
 }) => Wind(  speed: speed ?? this.speed,
   deg: deg ?? this.deg,
-  gust: gust ?? this.gust,
 );
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['speed'] = speed;
     map['deg'] = deg;
-    map['gust'] = gust;
     return map;
   }
 
@@ -206,9 +200,7 @@ class Main {
       this.tempMin, 
       this.tempMax, 
       this.pressure, 
-      this.humidity, 
-      this.seaLevel, 
-      this.grndLevel,});
+      this.humidity,});
 
   Main.fromJson(dynamic json) {
     temp = json['temp'];
@@ -217,8 +209,6 @@ class Main {
     tempMax = json['temp_max'];
     pressure = json['pressure'];
     humidity = json['humidity'];
-    seaLevel = json['sea_level'];
-    grndLevel = json['grnd_level'];
   }
   num? temp;
   num? feelsLike;
@@ -226,24 +216,18 @@ class Main {
   num? tempMax;
   num? pressure;
   num? humidity;
-  num? seaLevel;
-  num? grndLevel;
 Main copyWith({  num? temp,
   num? feelsLike,
   num? tempMin,
   num? tempMax,
   num? pressure,
   num? humidity,
-  num? seaLevel,
-  num? grndLevel,
 }) => Main(  temp: temp ?? this.temp,
   feelsLike: feelsLike ?? this.feelsLike,
   tempMin: tempMin ?? this.tempMin,
   tempMax: tempMax ?? this.tempMax,
   pressure: pressure ?? this.pressure,
   humidity: humidity ?? this.humidity,
-  seaLevel: seaLevel ?? this.seaLevel,
-  grndLevel: grndLevel ?? this.grndLevel,
 );
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -253,8 +237,6 @@ Main copyWith({  num? temp,
     map['temp_max'] = tempMax;
     map['pressure'] = pressure;
     map['humidity'] = humidity;
-    map['sea_level'] = seaLevel;
-    map['grnd_level'] = grndLevel;
     return map;
   }
 
